@@ -1,7 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { CategoriesService } from './categories.service';
 import { Prisma } from '@prisma/client';
-
 
 @Controller('categories')
 export class CategoriesController {
@@ -23,7 +30,10 @@ export class CategoriesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCategoryDto: Prisma.CategoryUpdateInput) {
+  update(
+    @Param('id') id: string,
+    @Body() updateCategoryDto: Prisma.CategoryUpdateInput,
+  ) {
     return this.categoriesService.update(+id, updateCategoryDto);
   }
 

@@ -1,11 +1,20 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, NotFoundException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  NotFoundException,
+} from '@nestjs/common';
 import { ServicesService } from './services.service';
 
 import { Prisma } from '@prisma/client';
 
 @Controller('services')
 export class ServicesController {
-  constructor(private readonly servicesService: ServicesService) { }
+  constructor(private readonly servicesService: ServicesService) {}
 
   @Post()
   create(@Body() createServiceDto: Prisma.ServiceCreateInput) {
@@ -23,10 +32,11 @@ export class ServicesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateServiceDto: Prisma.ServiceUpdateInput) {
-
+  update(
+    @Param('id') id: string,
+    @Body() updateServiceDto: Prisma.ServiceUpdateInput,
+  ) {
     return this.servicesService.update(+id, updateServiceDto);
-
   }
 
   @Delete(':id')

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx prisma *)",
+      "Bash(npm run *)",
+      "Bash(C:\\\\Projects\\\\portfolio-backend\\\\npx prisma *)",
+      "Bash(npx tsc *)",
+      "Bash(npm list *)"
+    ]
+  }
+}
